@@ -210,7 +210,10 @@ class Api
             CURLOPT_HEADER         => false,
             CURLOPT_TIMEOUT        => 30,
             CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_FOLLOWLOCATION => true
+            CURLOPT_FOLLOWLOCATION => true,
+            //Cloudflare started blocking it without overriding the UA so we'll just set it to this random one.
+            CURLOPT_USERAGENT      => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13'
+
         );
 
         $curl_options = $default_curl_options;
